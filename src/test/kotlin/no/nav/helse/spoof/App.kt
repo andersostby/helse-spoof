@@ -1,4 +1,4 @@
-package no.nav.helse.spokelse
+package no.nav.helse.spoof
 
 import org.junit.jupiter.api.Test
 

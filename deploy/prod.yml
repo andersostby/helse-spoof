@@ -1,7 +1,7 @@
 apiVersion: nais.io/v1alpha1
 kind: Application
 metadata:
-  name: spokelse
+  name: spoof
   namespace: default
   labels:
     team: tbd
@@ -16,7 +16,7 @@ spec:
     initialDelay: 5
   resources:
     limits:
-      cpu: 2000m
+      cpu: 500m
       memory: 512Mi
     requests:
       cpu: 50m
@@ -35,11 +35,11 @@ spec:
     enabled: true
     paths:
       - mountPath: /var/run/secrets/nais.io/vault
-        kvPath: /kv/prod/fss/spokelse/default
+        kvPath: /kv/prod/fss/spoof/default
       - mountPath: /var/run/secrets/nais.io/service_user
-        kvPath: /serviceuser/data/prod/srvspokelse
+        kvPath: /serviceuser/data/prod/srvspoof
   env:
   - name: KAFKA_BOOTSTRAP_SERVERS
     value: a01apvl00145.adeo.no:8443,a01apvl00146.adeo.no:8443,a01apvl00147.adeo.no:8443,a01apvl00148.adeo.no:8443,a01apvl00149.adeo.no:8443,a01apvl00150.adeo.no:8443
   - name: KAFKA_CONSUMER_GROUP_ID
-    value: spokelse-v1
+    value: spoof-v1

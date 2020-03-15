@@ -1,7 +1,7 @@
 apiVersion: nais.io/v1alpha1
 kind: Application
 metadata:
-  name: spokelse
+  name: spoof
   namespace: default
   labels:
     team: tbd
@@ -35,24 +35,11 @@ spec:
     enabled: true
     paths:
       - mountPath: /var/run/secrets/nais.io/vault
-        kvPath: /kv/preprod/fss/spokelse/default
+        kvPath: /kv/preprod/fss/spoof/default
       - mountPath: /var/run/secrets/nais.io/service_user
-        kvPath: /serviceuser/data/dev/srvspokelse
+        kvPath: /serviceuser/data/dev/srvspoof
   env:
   - name: KAFKA_BOOTSTRAP_SERVERS
     value: b27apvl00045.preprod.local:8443,b27apvl00046.preprod.local:8443,b27apvl00047.preprod.local:8443
   - name: KAFKA_CONSUMER_GROUP_ID
-    value: spokelse-v1
-  - name: MQ_HOSTNAME
-    value: b27apvl176.preprod.local
-  - name: MQ_PORT
-    value: "1413"
-  - name: MQ_CHANNEL
-    value: Q1_SPOKELSE
-  - name: MQ_QUEUE_MANAGER
-    value: MQ1LSC02
-  - name: MQ_ARENA_OUTPUT
-    value: QA.Q1_SPOKELSE.ARENA_TIL_INFOTRYGD
-  - name: MQ_ARENA_INPUT_KVITTERING
-    value: QA.Q1_SPOKELSE.ARENA_TIL_INFOTRYGD_KVITTERING
-
+    value: spoof-v1
