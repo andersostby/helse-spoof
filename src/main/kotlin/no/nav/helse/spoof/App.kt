@@ -19,4 +19,7 @@ fun main() {
             .metrics(CollectorRegistry.defaultRegistry)
             .build()
             .start(false)
+
+    val client = dispatch()
+    val server = server(client)
 }

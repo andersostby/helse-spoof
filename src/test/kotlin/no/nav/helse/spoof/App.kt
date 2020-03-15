@@ -6,6 +6,5 @@ internal class App {
 
     @Test
     internal fun main() {
-
     }
 }

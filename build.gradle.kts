@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val slf4jVersion = "1.7.25"
 val ktorVersion = "1.2.4"
+val jaxwsVersion = "2.3.1"
 val cxfVersion = "3.3.5"
 val jacksonVersion = "2.9.8"
 val kafkaVersion = "2.3.1"
@@ -27,6 +28,10 @@ dependencies {
     implementation("io.ktor:ktor-client-cio:$ktorVersion")
     implementation("io.ktor:ktor-client-jackson:$ktorVersion")
 
+    implementation("javax.activation:activation:1.1.1")
+    implementation("javax.xml.ws:jaxws-api:$jaxwsVersion")
+    implementation("com.sun.xml.ws:jaxws-ri:2.3.2-1")
+    implementation("org.apache.cxf:cxf-rt-transports-http-jetty:$cxfVersion")
     implementation("org.apache.cxf:cxf-rt-frontend-jaxws:$cxfVersion")
     implementation("org.apache.cxf:cxf-rt-transports-http:$cxfVersion")
     implementation("org.apache.cxf:cxf-rt-features-logging:$cxfVersion")
